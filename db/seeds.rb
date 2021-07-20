@@ -16,6 +16,8 @@ puts "Creating users"
   user = User.new(
     name: Faker::Name.name,
     bio: Faker::Educator.university,
+    email: Faker::Internet.email,
+    password: "password",
     location: location,
     speciality: specialty,
     status: status
