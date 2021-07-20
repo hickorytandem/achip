@@ -7,6 +7,9 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying users"
+Consultation.destroy_all
+User.destroy_all
 puts "Creating users"
 10.times do
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
@@ -27,14 +30,14 @@ puts "Creating users"
   title = ["Job search", "Interview tips", "Contract negotiation", "Surprise"].sample
   description = ["This is a super great consultation and you will eat chocolate and get fat!"].sample
   price = [25, 40, 60].sample
-  time = [30, 60, 90].sample
+  duration = [30, 60, 90].sample
   consultation = Consultation.new(
     title: title,
     description: description,
     price: price,
-    time: time
+    duration: duration
     )
   consultation.user = user
   consultation.save!
-  puts "Consulation #{consulation.id} for user #{user.name} created"
+  puts "Consulation #{consultation.id} for user #{user.name} created"
 end
