@@ -1,1 +1,10 @@
+
+<div class="card">
 <h2> All consultations</h2>
+
+<ul>
+  <% @consultations.each do |consultation| %>
+    <li><%= link_to consultation.title, consultation_path(consultation) %></li>
+  <% end %>
+</ul>
+</div>
