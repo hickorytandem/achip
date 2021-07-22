@@ -1,8 +1,10 @@
 class ConsultationsController < ApplicationController
   before_action :find_consultation, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @consultations = Consultation.all
+    @consultations = policy_scope(Consultation.all)
   end
 
   def new
@@ -14,7 +16,7 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    @consultation = Consultation.new(consultation_params) 
+    @consultation = Consultation.new(consultation_params)
     if @consultation.save
       redirect_to consultation_path(@consultation)
     else

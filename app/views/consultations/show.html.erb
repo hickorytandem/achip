@@ -5,5 +5,5 @@
   <p><strong>Duration: </strong><%= @consultation.duration %>mins</p>
 
   <%# No function added to this button yet %>
-  <button class="btn btn-primary">Book now</button>
+  <%= link_to 'Book session', consultation_bookings_path(@consultation), class: 'btn btn-primary'%>
 </div>
