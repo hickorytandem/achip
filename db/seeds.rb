@@ -32,6 +32,7 @@ puts "Creating users"
   description = ["This is a super great consultation and you will eat chocolate and get fat!"].sample
   price = [25, 40, 60].sample
   duration = [30, 60, 90].sample
+
   consultation = Consultation.new(
     title: title,
     description: description,
@@ -41,4 +42,18 @@ puts "Creating users"
   consultation.user = user
   consultation.save!
   puts "Consulation #{consultation.id} for user #{user.name} created"
+
+  date_time = ["12/07/2021", "12/08/2021", "12/09/2021"].sample
+  status = ["Accept", "Reject", "Pending"]
+
+  booking = Booking.new(
+    date_time: date_time,
+    status: status
+  )
+
+  booking.user = user
+  booking.consultation = consultation
+  booking.save!
+  puts "Booking #{booking.id} for user #{user.name} created"
+
 end
