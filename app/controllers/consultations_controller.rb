@@ -15,7 +15,9 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    @consultation = Consultation.new(consultation_params) 
+    @consultation = Consultation.new(consultation_params)
+    @consultation.user = current_user
+    authorize @consultation
     if @consultation.save
       redirect_to consultation_path(@consultation)
     else
@@ -31,6 +33,7 @@ class ConsultationsController < ApplicationController
 
   def find_consultation
     @consultation = Consultation.find(params[:id])
+    authorize @consultation
   end
 
 end
