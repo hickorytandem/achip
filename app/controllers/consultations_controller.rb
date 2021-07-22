@@ -3,7 +3,10 @@ class ConsultationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+<<<<<<< HEAD
     @consultations = Consultation.all
+=======
+>>>>>>> 3958086f9f6ef46705cd75b81f8c56872f5e14db
     @consultations = policy_scope(Consultation.all)
   end
 

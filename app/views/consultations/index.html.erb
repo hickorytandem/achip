@@ -1,7 +1,7 @@
 <div class="container">
   <div class="navbar">
     <h1 class="my-5">All Consultations💡</h1>
-    <button type="button" class="btn btn-primary btn-red">
+    <button type="button" class="btn btn-primary">
     <%= link_to "Add a new consultation", new_consultation_path %>
     </button>
   </div>
@@ -11,9 +11,9 @@
         <%= link_to consultation_path(consultation) do %>
           <div class="card shadow p-3 mb-3">
             <h3 class="mb-3"><%= consultation.title %></h3>
-            <p>📍<%= consultation.description %></p>
-            <p>📞<%= consultation.price %></p>
-            <p><%= consultation.duration %></p>
+            <p>💬<%= consultation.description %></p>
+            <p>💰<%= consultation.price %></p>
+            <p>⏰<%= consultation.duration %></p>
           </div>
         <% end %>
       </div>
