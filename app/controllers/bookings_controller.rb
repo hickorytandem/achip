@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
   end
-  
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params) 
+    @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.consultation = @consultation
     if @booking.save
       redirect_to consultation_path(@consultation)
@@ -22,13 +23,13 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-  
+
   private
-  
+
   def booking_params
     params.require(:booking).permit(:date_time, :status)
   end
-  
+
   def find_consultation
     @consultation = Consultation.find(params[:consultation_id])
   end
