@@ -5,6 +5,7 @@ class ConsultationsController < ApplicationController
   end
 
   def show
+    authorize @consultation
   end
 
   private
