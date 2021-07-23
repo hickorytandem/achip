@@ -11,9 +11,10 @@
   width: 40px;
 }
 
-.navbar-brand h2 {
+.navbar-light .navbar-brand {
   font-size: 32px;
   font-weight: 700;
+  color: $black;
 }
 
 .navbar-item {
@@ -22,7 +23,6 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  margin-right: 12px;
   color: $black;
   &:hover {
     color: rgba (0, 0, 0, 0.5);
