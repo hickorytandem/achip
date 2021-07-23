@@ -4,7 +4,6 @@
   font-weight: 500;
 }
 
-.btn .btn-black {
-  background-color: $black;
-  border-color: $black;
+.btn .btn-primary::hover {
+  background-color: $dark-green;
 }

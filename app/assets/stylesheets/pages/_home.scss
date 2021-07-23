@@ -8,6 +8,18 @@
   justify-content: space-between;
 }
 
+.card-category {
+  font-family: BioRhyme;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 50px;
+}
+.card-product h2{
+  font-family: Inter;
+  font-weight: 800;
+}
+
 .card-product-big {
   overflow: hidden;
   height: 320px;
@@ -20,7 +32,7 @@
 
 .card-product-big h2 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 800;
   margin: 0;
   padding: 0 24px 8px 24px;
 }
