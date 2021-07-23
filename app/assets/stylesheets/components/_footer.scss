@@ -6,8 +6,10 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  // Make footer at the most bottom layer
+  z-index: -4;
 }
 
 .footer-links {

@@ -16,9 +16,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
+    @booking.user = current_user
     @booking.consultation = @consultation
     if @booking.save
-      redirect_to consultation_path(@consultation)
+      redirect_to dashboard_path
     else
       render :new
     end
