@@ -44,7 +44,7 @@ puts "Creating users"
   puts "Consulation #{consultation.id} for user #{user.name} created"
 
   date_time = ["12/07/2021", "12/08/2021", "12/09/2021"].sample
-  status = ["Accept", "Reject", "Pending"]
+  status = [0, 1, 2].sample
 
   booking = Booking.new(
     date_time: date_time,

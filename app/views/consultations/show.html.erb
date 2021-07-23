@@ -6,7 +6,6 @@
 
   <%= simple_form_for [ @consultation, @booking ] do |f| %>
     <%= f.input :date_time, as: :date, html5: true %>
-    <%# <% f.input :status %>
     <%= f.submit "Booking session", class: "btn btn-primary" %>
   <% end %>
 </div>
