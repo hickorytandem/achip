@@ -13,4 +13,8 @@ class PagesController < ApplicationController
     @top_consultants = @all_consultants.sample(6)
     @consultations = Consultation.all.sample(6)
   end
+
+  def dashboard
+    @bookings = Booking.all
+  end
 end

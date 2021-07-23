@@ -1,0 +1,15 @@
+<h2>My Dashboard</h2>
+
+<h3>My Bookings</h3>
+
+<% @bookings.each do |booking| %>
+   <p>Title: <%= booking.consultation.title %></p>
+   <p>Price: $<%= booking.consultation.price %></p>
+   <p>Duration: <%= booking.consultation.duration %></p>
+   <p>Mentor: <%= booking.consultation.user.name %></p>
+   <p>Speciality: <%= booking.consultation.user.speciality %></p>
+   <p>Date: <%= booking.date_time.strftime('%B %d, %Y') %></p>
+   <p>Booking status: <%= booking.status %></p>
+   <hr>
+<% end %>
+

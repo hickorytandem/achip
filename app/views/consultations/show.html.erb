@@ -4,6 +4,8 @@
   <p><strong>Price: </strong>$<%= @consultation.price %></p>
   <p><strong>Duration: </strong><%= @consultation.duration %>mins</p>
 
-  <%# No function added to this button yet %>
-  <button class="btn btn-primary">Book now</button>
+  <%= simple_form_for [ @consultation, @booking ] do |f| %>
+    <%= f.input :date_time, as: :date, html5: true %>
+    <%= f.submit "Booking session", class: "btn btn-primary" %>
+  <% end %>
 </div>
