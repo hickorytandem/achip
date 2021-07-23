@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background: rgb(167,236,77);
+  background: linear-gradient(0deg, rgba(167,236,77,1) 0%, rgba(241,255,219,1) 50%, rgba(242,253,255,1) 100%);
+  border-bottom: 1px solid $dark-gray;
+  color: $dark-gray;
+}
+

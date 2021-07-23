@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 2021_07_20_131516) do
     t.text "bio"
     t.string "location"
     t.string "speciality"
-    t.integer "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
