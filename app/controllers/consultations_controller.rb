@@ -12,6 +12,7 @@ class ConsultationsController < ApplicationController
 
   def show
     authorize @consultation
+    @booking = Booking.new
   end
 
   def create
