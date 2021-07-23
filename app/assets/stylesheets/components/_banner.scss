@@ -9,9 +9,9 @@
 .banner h1 {
   margin: 0;
   color: $dark-gray;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+  // text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  // // font-size: 32px;
+  // font-weight: bold;
   margin-bottom: 24px;
   margin-left: 64px;
   margin-right: 64px;
@@ -19,9 +19,9 @@
 
 .banner p {
   font-size: 20px;
-  color: $dark-gray;
+  color: $gray;
   opacity: .7;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   margin-bottom: 48px;
   margin-left: 64px;
   margin-right: 64px;
