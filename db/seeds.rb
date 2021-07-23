@@ -24,7 +24,7 @@ puts "Creating users"
     password: "password",
     location: location,
     speciality: specialty,
-    status: status
+    # status: status
     )
   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
   user.save!
