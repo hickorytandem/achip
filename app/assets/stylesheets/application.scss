@@ -18,11 +18,21 @@
 h1 {
   font-size: 42px;
   font-weight: 800;
+  color: #05201E;
 }
 
+h2 {
+  font-size: 28px;
+  font-weight: 800px;
+  color: #05201E;
+}
 
-
-
+a {
+  color: black;
+  &:hover {
+    color: rgba(0,0,0,0.4);
+  }
+}
 
 body {
   background: linear-gradient(180deg, #F1FFF1 -0.51%, #F3F3F3 39.61%, #DEF98B 70.5%);
