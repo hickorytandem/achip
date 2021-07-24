@@ -32,17 +32,24 @@
     </div>
 
     <%# Consultations %>
-    <div class="row">
+    <div class="row m-0">
       <div class="d-flex flex-wrap justify-content-between">
-        <% @consultations.each do |consultation| %>
+        <% @consultations.first(6).each do |consultation| %>
           <%= link_to consultation_path(consultation), action: 'go' do %>
              <div class="card-product col-lg-5 col-md-7 col-sm-12">
                 <%= image_tag consultation.user.avatar, alt: "Consultant image" %>
                 <div class="card-product-infos">
-                  <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
-                  <h2><%= consultation.title %></h2>
-                  <p style="opacity: .7;"><%= consultation.user.name %></p>
-                  <p style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
+                  <div class="consultation-badges d-flex">
+                    <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
+                    <%# Keep for Booking status %>
+                    <%# <span class="badge badge-primary">Status</span> %>
+                  </div>
+                  <div class="consultation-title">
+                    <h2><%= consultation.title %></h2>
+                    <p style="opacity: .7;"><%= consultation.user.name %></p>
+                  </div>
+
+                  <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
                 </div>
             </div>
           <% end %>
