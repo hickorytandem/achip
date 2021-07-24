@@ -1,23 +1,30 @@
 <div class="container">
   <div class="navbar">
-    <h1 class="my-5">All Consultations💡</h1>
-    <button type="button" class="btn btn-primary">
-    <%= link_to "Add a new consultation", new_consultation_path %>
-    </button>
+    <h1 class="my-5">All Sessions</h1>
+    <%= link_to "Add a new consultation", new_consultation_path, class: "btn btn-primary" %>
   </div>
-  <div class="row">
-    <% @consultations.each do |consultation| %>
-      <div class="cards col-6 col-lg-4">
-        <%= link_to consultation_path(consultation) do %>
-          <div class="card shadow p-3 mb-3">
-            <h3 class="mb-3"><%= consultation.title %></h3>
-            <p>💬<%= consultation.description %></p>
-            <p>💰<%= consultation.price %></p>
-            <p>⏰<%= consultation.duration %></p>
-          </div>
+  <div class="row d-flex justify-content-center">
+      <div class="d-flex flex-wrap justify-content-evenly">
+        <% @consultations.each do |consultation| %>
+          <%= link_to consultation_path(consultation), action: 'go' do %>
+             <div class="card-product flex-grow col-lg-5 col-md-7 col-sm-12">
+                <%= image_tag consultation.user.avatar, alt: "Consultant image" %>
+                <div class="card-product-infos">
+                  <div class="consultation-badges d-flex">
+                    <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
+                    <%# Keep for Booking status %>
+                    <%# <span class="badge badge-primary">Status</span> %>
+                  </div>
+                  <div class="consultation-title">
+                    <h2><%= consultation.title %></h2>
+                    <p style="opacity: .7;"><%= consultation.user.name %></p>
+                  </div>
+                  <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
+                </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
 </div>
 
