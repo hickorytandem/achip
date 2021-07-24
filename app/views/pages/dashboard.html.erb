@@ -43,11 +43,17 @@
    <div class="card-booking col-lg-12">
       <%= image_tag booking.consultation.user.avatar, alt: "Consultant image" %>
       <div class="card-booking-infos">
-         <div class="consultation-title">
+         <div class="mentor-name">
             <h2><%= booking.consultation.user.name %></h2>
             <p style="opacity: .7;"><%= booking.consultation.title %></p>
          </div>
-         <p class="consultation-price" style="font-size: 16px;"><%= booking.date_time %></p>
+         <div class="card-booking-description d-flex flex-row justify-content-between">
+            <p class="consultation-date" style="font-size: 16px;"><strong>Time: </strong><%= booking.date_time %></p>
+            <div>
+               <button type="button" class="btn btn-primary" id="decline">Decline</button>
+               <button type="button" class="btn btn-primary" id="accept">Accept</button>
+            </div>
+         </div>
       </div>
    </div>
    <% end %>

@@ -6,7 +6,7 @@
   display: flex;
   align-content: space-between;
   color: black;
-  font-family: BioRhyme;
+  font-family: Inter;
   font-size: 24px;
   font-weight: 400;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -16,9 +16,26 @@
   margin-top: 20px;
   padding: 32px;
   font-family: Inter;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+
+  &:hover h2{
+    color: white;
+  }
+
+  &:hover p{
+    color: white;
+  }
 }
 
 .card-dashboard h2 {
+  font-family: Inter;
+}
+
+.card-dashboard p {
   font-family: Inter;
 }
 

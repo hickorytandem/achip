@@ -44,19 +44,34 @@
   top: 20px;
 }
 
-.card-booking-infos .consultation-title {
+.card-booking-infos .mentor-name {
   position: absolute;
-  top: 52px;
+  top: 23px;
   p {
     margin-top: 8px;
     padding: 0;
   }
 }
 
-
-.card-booking-infos .consultation-price {
+.card-booking-infos #decline {
   position: absolute;
-  bottom: 24px;
+  bottom: 23px;
+  right: 125px;
+  background-color: white;
+  color: black;
+  border-color: black;
+  border: 1px solid;
+}
+
+.card-booking-infos #accept {
+  position: absolute;
+  bottom: 23px;
+  right: 20px;
+}
+
+.card-booking-infos .consultation-date {
+  position: absolute;
+  bottom: 41px;
 }
 
 
