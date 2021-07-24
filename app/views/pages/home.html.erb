@@ -33,7 +33,7 @@
 
     <%# Consultations %>
     <div class="row d-flex justify-content-center">
-      <div class="d-flex flex-wrap justify-content-evenly">
+      <div class="d-flex flex-wrap justify-content-evenly ">
         <% @consultations.first(6).each do |consultation| %>
           <%= link_to consultation_path(consultation), action: 'go' do %>
              <div class="card-product flex-grow col-lg-5 col-md-7 col-sm-12">
