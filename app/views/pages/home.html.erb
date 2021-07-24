@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: url(<%= image_url('banner-02.png') %>); height: 480px;">
-  <div class="container">
+  <div class="container col-md-8 col-sm-12">
     <div class="text-center">
       <h1>Find a mentor to guide you for <br>the future ahead</h1>
       <p>Work with leading mentors and gain access to personalized guidance to reach your potential. Ongoing sessions and expert advice, on your terms, all for a flat price.</p>
@@ -32,11 +32,11 @@
     </div>
 
     <%# Consultations %>
-    <div class="row m-0">
-      <div class="d-flex flex-wrap justify-content-between">
+    <div class="row d-flex justify-content-center">
+      <div class="d-flex flex-wrap justify-content-evenly">
         <% @consultations.first(6).each do |consultation| %>
           <%= link_to consultation_path(consultation), action: 'go' do %>
-             <div class="card-product col-lg-5 col-md-7 col-sm-12">
+             <div class="card-product flex-grow col-lg-5 col-md-7 col-sm-12">
                 <%= image_tag consultation.user.avatar, alt: "Consultant image" %>
                 <div class="card-product-infos">
                   <div class="consultation-badges d-flex">
@@ -69,7 +69,7 @@
             <p>Guiding professionals around the world to have them reach their goals.</p>
             <%= link_to "Become a mentor", new_user_registration_path, class:"btn btn-light", style:"margin-left: 32px;" %>
           </div>
-          <%= image_tag "image 1.png", alt: "alttext" %>
+          <%= image_tag "https://www.freundevonfreunden.com/wp-content/uploads/Freunde-von-Freunden-Ronan-and-Erwan-Bouroullec-7688-1600x1200.jpg", alt: "alttext" %>
         </div>
       </div>
     </div>
