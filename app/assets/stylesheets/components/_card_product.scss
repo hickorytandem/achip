@@ -1,13 +1,14 @@
 .card-product {
   overflow: hidden;
   height: 194px;
-  width: 550px;
+  // width: 640px;
   background: white;
   border: 1px solid $black;
   border-radius: 12px;
   display: flex;
   align-items: center;
   margin: 24px 12px;
+  flex-grow: 2;
 }
 
 .card-product img {
@@ -52,12 +53,8 @@
     padding: 0;
   }
 }
-
-
 .card-product-infos .consultation-price {
   position: absolute;
   bottom: 24px;
 }
-
-
 
