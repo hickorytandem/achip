@@ -48,18 +48,23 @@ a {
 
 .owl-carousel {
   display: flex;
-  .owl-prev {
+  .owl-nav .owl-prev {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 90%;
+    top: 40%;
+    left: -12px;
+    height: 48px;
+    width: 48px;
+    background: white !important;
+    border: 1px solid black !important;
     font-size: 30px !important;
   }
   .owl-next {
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 90%;
+    width: 48px;
+    top: 40%;
+    right:-20px;
+    background: white !important;
+    border: 1px solid black !important;
     font-size: 30px !important;
   }
 }

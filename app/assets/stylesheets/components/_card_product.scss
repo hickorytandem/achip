@@ -1,33 +1,63 @@
 .card-product {
   overflow: hidden;
-  height: 160px;
+  height: 194px;
+  width: 550px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid $black;
+  border-radius: 12px;
   display: flex;
   align-items: center;
+  margin: 24px 12px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 160px;
+  height: 160px;
+  width: 112px;
   object-fit: cover;
+  border: 1px solid $black;
+  border-radius: 8px;
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-family: Inter;
   font-weight: 800;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: $black;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 100%;
+  height:100%
 }
+
+.card-product-infos .consultation-badges {
+  position: absolute;
+  top: 20px;
+}
+
+.card-product-infos .consultation-title {
+  position: absolute;
+  top: 52px;
+  p {
+    margin-top: 8px;
+    padding: 0;
+  }
+}
+
+
+.card-product-infos .consultation-price {
+  position: absolute;
+  bottom: 24px;
+}
+
+
+
