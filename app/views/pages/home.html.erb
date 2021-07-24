@@ -28,24 +28,31 @@
   <div class="section">
     <div class="row section-title mb-3">
       <h2 class="align-middle">Now trending</h2>
-      <%= link_to "Explore more > ", consultations_path, class: "align-middle" %>
+      <%= link_to "Explore more", consultations_path, class: "align-middle" %>
     </div>
+
+    <%# Consultations %>
     <div class="row">
-      <% @top_consultations.each do |consultation| %>
-      <div class="col-6 d-flex justify-content-around">
-        <div class="card-product mb-3" style="width: 27rem; border-radius: 5px;">
-          <%= image_tag consultation.user.avatar, alt: "Consultant image" %>
-          <div class="card-product-infos">
-            <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary btn-sm mb-3"  %>
-            <h2><%= consultation.title %></h2>
-            <p><%= consultation.user.name %></p>
-            <p><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
-          </div>
-        </div>
+      <div class="d-flex flex-wrap justify-content-between">
+        <% @consultations.each do |consultation| %>
+          <%= link_to consultation_path(consultation), action: 'go' do %>
+             <div class="card-product col-lg-5 col-md-7 col-sm-12">
+                <%= image_tag consultation.user.avatar, alt: "Consultant image" %>
+                <div class="card-product-infos">
+                  <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
+                  <h2><%= consultation.title %></h2>
+                  <p style="opacity: .7;"><%= consultation.user.name %></p>
+                  <p style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <% end %>
+
     </div>
-    </div>
+
+  </div>
+
   <div class="section">
     <div class="row d-flex justify-content-center">
       <div class="col-12">
