@@ -1,0 +1,63 @@
+.card-booking {
+  overflow: hidden;
+  height: 194px;
+  width: 620px;
+  background: white;
+  border: 1px solid $black;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  margin: 24px 12px;
+}
+
+.card-booking img {
+  height: 160px;
+  width: 112px;
+  object-fit: cover;
+  border: 1px solid $black;
+  border-radius: 8px;
+}
+
+.card-booking h2 {
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 800;
+  margin: 0;
+}
+
+.card-booking p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: $black;
+}
+
+.card-booking .card-booking-infos {
+  padding: 16px;
+  width: 100%;
+  height:100%
+}
+
+.card-booking-infos .consultation-badges {
+  position: absolute;
+  top: 20px;
+}
+
+.card-booking-infos .consultation-title {
+  position: absolute;
+  top: 52px;
+  p {
+    margin-top: 8px;
+    padding: 0;
+  }
+}
+
+
+.card-booking-infos .consultation-price {
+  position: absolute;
+  bottom: 24px;
+}
+
+
+

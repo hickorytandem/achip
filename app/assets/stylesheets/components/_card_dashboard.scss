@@ -2,11 +2,10 @@
   background-size: cover;
   background-position: center;
   background-color: white;
-  height: 300px;
+  height: 280px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  align-content: space-between;
+  color: black;
   font-family: BioRhyme;
   font-size: 24px;
   font-weight: 400;
@@ -14,14 +13,18 @@
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
+  margin-top: 20px;
+  padding: 32px;
+  font-family: Inter;
 }
 
 .card-dashboard h2 {
+  font-family: Inter;
 }
 
 
 
 .card-dashboard .card-dashboard-infos {
   align-content: space-between;
-  padding: 10px;
+  
 }
