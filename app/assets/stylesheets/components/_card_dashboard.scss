@@ -1,0 +1,27 @@
+.card-dashboard {
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: BioRhyme;
+  font-size: 24px;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.card-dashboard h2 {
+}
+
+
+
+.card-dashboard .card-dashboard-infos {
+  align-content: space-between;
+  padding: 10px;
+}
