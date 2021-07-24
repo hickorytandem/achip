@@ -37,7 +37,7 @@
         <% @consultations.first(6).each do |consultation| %>
           <%= link_to consultation_path(consultation), action: 'go' do %>
              <div class="card-product flex-grow col-lg-5 col-md-7 col-sm-12">
-                <%= image_tag 'https://source.unsplash.com/1600x900/?portrait', alt: "Consultant image" %>
+                <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
                 <div class="card-product-infos">
                   <div class="consultation-badges d-flex">
                     <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
