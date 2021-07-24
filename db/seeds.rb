@@ -29,7 +29,16 @@ puts "Creating users"
   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
   user.save!
   title = ["Job search", "Interview tips", "Contract negotiation", "Surprise"].sample
-  description = ["This is a super great consultation and you will eat chocolate and get fat!"].sample
+  description = ["With 10+ years of experience in the field, I'm familiar with the in's and out's
+    of the HR process and can advise you on the best way to get interviews and pass them for a smooth
+      application journey", "It is important to understand your own value and an organization's marginal
+      value when negotiating compensation. I’ll provide expert advice on ways for demonstrating your worth
+      and successfully negotiating for pay increases based on your achievements.", "I’ll go over the 5 do’s
+        and don’ts of interviewing and guide you on how to best answer interview questions giving the the
+        confidence to stand out.", "Get the inside track on how to convert an office friendship into and office
+        romance!", "If you are stuck in a job you hate, I can definitely help you ditch your company and find,
+        and employer who will respect and value your service and achievements. Tell your boss that he/she can
+        take his/her job and shove it! You are valuable and you matter!"].sample
   price = [25, 40, 60].sample
   duration = [30, 60, 90].sample
 
