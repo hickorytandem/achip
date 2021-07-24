@@ -1,3 +1,4 @@
+<%# Banner %>
 <div class="banner" style="background-image: url(<%= image_url('banner-02.png') %>); height: 480px;">
   <div class="container col-md-8 col-sm-12">
     <div class="text-center">
@@ -7,6 +8,8 @@
     </div>
   </div>
 </div>
+
+<%# Industry Mentor %>
 <div class="container">
   <div class="section">
     <div class="d-flex flex-column text-center justify-content-center">
@@ -15,49 +18,45 @@
       <%= image_tag "https://res.cloudinary.com/hickorytandem/image/upload/v1627110299/companies-logo-01_cjoypm.png", alt: "Company logos", class: "mentor-logo mb-5"%>
     </div>
   </div>
-  <div class="section">
-    <h2>Browse by expertise</h2>
-    <div class="owl-carousel owl-theme">
-      <% @expertises.each do |expertise| %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            <%= link_to expertise, consultations_path(speciality: expertise), style: "color: white" %>
-          </div>
+</div>
+
+<%# Browse by expertise %>
+<%= render 'shared/card_carousel' %>
+
+<%# Now trending %>
+<div class="trending container d-flex justify-content-between">
+    <h2>Now trending</h2>
+    <%= link_to "Explore more", consultations_path %>
+</div>
+
+<%# Consultations %>
+<%# col-lg-5 col-md-7 col-sm-12 %>
+<div class="container d-flex flex-wrap">
+  <% @consultations.first(6).each do |consultation| %>
+    <div class="card-frame col-lg-6 col-md-8 col-sm-12">
+      <%= link_to consultation_path(consultation), action: 'go' do %>
+        <div class="card-product">
+            <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <div class="card-product-infos">
+              <%# Badge %>
+              <div class="consultation-badges d-flex">
+                <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
+                <%# Keep for Booking status %>
+                <%# <span class="badge badge-primary">Status</span> %>
+              </div>
+              <%# Title + Description %>
+              <div class="consultation-title">
+                <h2><%= consultation.title %></h2>
+                <p style="opacity: .7;"><%= consultation.user.name %></p>
+              </div>
+              <%# Price %>
+              <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
+            </div>
+        </div>
       <% end %>
     </div>
-  </div>
-  <div class="section">
-    <div class="row section-title mb-3">
-      <h2 class="align-middle">Now trending</h2>
-      <%= link_to "Explore more", consultations_path, class: "align-middle" %>
-    </div>
-
-    <%# Consultations %>
-    <div class="row d-flex justify-content-center">
-      <div class="d-flex flex-wrap justify-content-evenly">
-        <% @consultations.first(6).each do |consultation| %>
-          <%= link_to consultation_path(consultation), action: 'go' do %>
-             <div class="card-product flex-grow col-lg-5 col-md-7 col-sm-12">
-                <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
-                <div class="card-product-infos">
-                  <div class="consultation-badges d-flex">
-                    <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
-                    <%# Keep for Booking status %>
-                    <%# <span class="badge badge-primary">Status</span> %>
-                  </div>
-                  <div class="consultation-title">
-                    <h2><%= consultation.title %></h2>
-                    <p style="opacity: .7;"><%= consultation.user.name %></p>
-                  </div>
-
-                  <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
-                </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-  </div>
+  <% end %>
+</div>
 
   <div class="section">
     <div class="row d-flex justify-content-center">
@@ -73,4 +72,4 @@
       </div>
     </div>
   </div>
-</div>
+

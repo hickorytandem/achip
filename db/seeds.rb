@@ -14,7 +14,7 @@ User.destroy_all
 puts "Creating users"
 10.times do
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
-  specialty = ["IT", "Media", "Sales", "Editing", "UX Design"].sample
+  specialty = ["IT", "Film", "Marketing", "Cooking", "UX Design"].sample
   status = ["Employeed", "Unemployeed", "Student", "Intern"].sample
   file = URI.open("https://source.unsplash.com/1600x900/?#{specialty}")
   user = User.new(

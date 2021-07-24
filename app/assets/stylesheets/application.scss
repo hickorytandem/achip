@@ -45,10 +45,10 @@ a {
 
 body {
   background: linear-gradient(180deg, #F1FFF1 -0.51%, #F3F3F3 39.61%, #DEF98B 70.5%);
-  border-bottom: 1px solid $dark-gray;
-  color: $dark-gray;
+  // border-bottom: 1px solid $dark-gray;
+  // color: $dark-gray;
 }
 
-// .container {
-//   width: 960px;
-// }
+.container {
+  max-width: 1270px;
+}
