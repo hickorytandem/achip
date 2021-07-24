@@ -35,7 +35,7 @@ puts "Creating users"
       value when negotiating compensation. I’ll provide expert advice on ways for demonstrating your worth
       and successfully negotiating for pay increases based on your achievements.", "I’ll go over the 5 do’s
         and don’ts of interviewing and guide you on how to best answer interview questions giving the the
-        confidence to stand out.", "Get the inside track on how to convert an office friendship into and office
+        confidence to stand out.", "Get the inside track on how to convert an office friendship into an office
         romance!", "If you are stuck in a job you hate, I can definitely help you ditch your company and find,
         and employer who will respect and value your service and achievements. Tell your boss that he/she can
         take his/her job and shove it! You are valuable and you matter!"].sample
