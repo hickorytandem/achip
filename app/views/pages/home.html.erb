@@ -23,17 +23,16 @@
 <%# Browse by expertise %>
 <%= render 'shared/card_carousel' %>
 
-<%# Consultations %>
-<%= render 'shared/consultation_card' %>
-
 <%# Now trending %>
 <div class="trending container d-flex justify-content-between">
     <h2>Now trending</h2>
     <%= link_to "Explore more", consultations_path %>
 </div>
 
+<%# Consultation cards %>
+<%= render 'shared/consultation_card' %>
 
-
+<%# Become a mentor banner %>
   <div class="section">
     <div class="row d-flex justify-content-center">
       <div class="col-12">
@@ -48,4 +47,5 @@
       </div>
     </div>
   </div>
+
 

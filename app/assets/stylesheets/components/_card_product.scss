@@ -1,52 +1,3 @@
-// .card-product img {
-//   height: 160px;
-//   width: 112px;
-//   object-fit: cover;
-//   border: 1px solid $black;
-//   border-radius: 8px;
-//   margin-left: 16px;
-// }
-
-// .card-product h2 {
-//   font-size: 24px;
-//   font-family: Inter;
-//   font-weight: 800;
-//   margin: 0;
-// }
-
-// .card-product p {
-//   font-size: 14px;
-//   line-height: 1.4;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-//   color: $black;
-// }
-
-// .card-product .card-product-infos {
-//   padding: 16px;
-//   width: 100%;
-//   height:100%
-// }
-
-// .card-product-infos .consultation-badges {
-//   position: absolute;
-//   top: 20px;
-// }
-
-// .card-product-infos .consultation-title {
-//   position: absolute;
-//   top: 52px;
-//   p {
-//     margin-top: 8px;
-//     padding: 0;
-//   }
-// }
-// .card-product-infos .consultation-price {
-//   position: absolute;
-//   bottom: 24px;
-// }
-
-
 /* Float two columns side by side */
 .card-column {
   float: left;
@@ -72,15 +23,19 @@
   background-color: white;
   border: 1px solid $black;
   border-radius: 12px;
-  display: flex;
   align-items: center;
   height:194px;
+  margin-bottom: 16px;
   // Preset for 'card' class from W3School
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 400px;
+  max-width: 620px;
   word-wrap: break-word;
+  &:hover {
+    background-color: $light-yellow;
+  }
 }
 
 .card-product img {
@@ -93,9 +48,54 @@
   left: 16px;
 }
 
+// .card-product a {
+//   width: 112px;
+// }
+.card-product .card-product-infos {
+  // padding: 16px;
+  width: 75%;
+  position: absolute;
+  left: 150px;
+  height:100%;
+}
+
+.card-product h2 {
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 800;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: $black;
+}
+
+
+.card-product-infos .consultation-badges {
+  position: absolute;
+  top: 12px;
+}
+
+.card-product-infos .consultation-title {
+  position: absolute;
+  top: 48px;
+  p {
+    margin-top: 4px;
+    padding: 0;
+  }
+}
+.card-product-infos .consultation-price {
+  position: absolute;
+  top: 130px;
+}
+
 
 /* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .card-column {
     width: 100%;
     display: block;
