@@ -1,59 +1,9 @@
-<%
-=begin %>
-<div class="container d-flex flex-wrap">
-  <ul style="margin:0; list-style-type: none;">
-    <% @consultations.first(2).each do |consultation| %>
-      <li><div class="card-frame col-lg-6 col-md-8 col-sm-12">
-        <%= link_to consultation_path(consultation), action: 'go' do %>
-          <div class="card-product">
-              <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
-              <div class="card-product-infos">
-                <%# Badge %>
-                <div class="consultation-badges d-flex">
-                  <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
-                  <%# Keep for Booking status %>
-                  <%# <span class="badge badge-primary">Status</span> %>
-                </div>
-                <%# Title + Description %>
-                <div class="consultation-title">
-                  <h2><%= consultation.title %></h2>
-                  <p style="opacity: .7;"><%= consultation.user.name %></p>
-                </div>
-                <%# Price %>
-                <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> min</strong></p>
-              </div>
-          </div>
-        <% end %>
-      </li></div>
-    <% end %>
-  </ul>
-</div>
-
-
-<div class="card-product-infos">
-                <%# Badge %>
-                <div class="consultation-badges d-flex">
-                  <%= link_to consultation.user.speciality, consultations_path ,class: "badge badge-primary mb-3"  %>
-                  <%# Keep for Booking status %>
-                  <span class="badge badge-primary">Status</span>
-                </div>
-                <%# Title + Description %>
-                <div class="consultation-title">
-                  <h2><%= consultation.title %></h2>
-                  <p style="opacity: .7;"><%= consultation.user.name %></p>
-                </div>
-                <%# Price %>
-                <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> mins</strong></p>
-              </div>
-     <%
-=end %>
-
-<div class="container">
+<div class="container mb-4">
   <div class="card-row">
-    <% @consultations.first(4).each do |consultation| %>
-
+    <% @consultations.first(6).each do |consultation| %>
       <div class="card-column">
         <%= link_to consultation_path(consultation), action: 'go' do %>
+
           <div class="card-product">
             <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
             <div class="card-product-infos">

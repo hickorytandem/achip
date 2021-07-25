@@ -10,21 +10,19 @@
 </div>
 
 <%# Industry Mentor %>
-<div class="container">
-  <div class="section">
+<div class="container section">
     <div class="d-flex flex-column text-center justify-content-center">
       <h2 class="mt-5 mb-5">Get mentored by industry veterans</h2>
       <%= image_tag "https://res.cloudinary.com/hickorytandem/image/upload/v1627110299/companies-logo-02_pq7ifq.png", alt: "Company logos", class: "mentor-logo mb-5" %>
       <%= image_tag "https://res.cloudinary.com/hickorytandem/image/upload/v1627110299/companies-logo-01_cjoypm.png", alt: "Company logos", class: "mentor-logo mb-5"%>
     </div>
-  </div>
 </div>
 
 <%# Browse by expertise %>
 <%= render 'shared/card_carousel' %>
 
 <%# Now trending %>
-<div class="trending container d-flex justify-content-between">
+<div class="trending container d-flex justify-content-between mb-3">
     <h2>Now trending</h2>
     <%= link_to "Explore more", consultations_path %>
 </div>
@@ -33,19 +31,19 @@
 <%= render 'shared/consultation_card' %>
 
 <%# Become a mentor banner %>
-  <div class="section">
-    <div class="row d-flex justify-content-center">
-      <div class="col-12">
-        <div class="card-product-big mb-3">
-          <div class="card-product-infos">
-            <h2 style="color: white">Share your expertise, make a difference.</h2>
-            <p>Guiding professionals around the world to have them reach their goals.</p>
-            <%= link_to "Become a mentor", new_user_registration_path, class:"btn btn-light", style:"margin-left: 32px;" %>
-          </div>
-          <%= image_tag "https://www.freundevonfreunden.com/wp-content/uploads/Freunde-von-Freunden-Ronan-and-Erwan-Bouroullec-7688-1600x1200.jpg", alt: "alttext" %>
+<div class="container section">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12">
+      <div class="card-product-big mb-3">
+        <div class="card-product-infos">
+          <h2 style="color: white">Share your expertise, make a difference.</h2>
+          <p>Guiding professionals around the world to have them reach their goals.</p>
+          <%= link_to "Become a mentor", new_user_registration_path, class:"btn btn-light", style:"margin-left: 32px;" %>
         </div>
+        <%= image_tag "https://www.freundevonfreunden.com/wp-content/uploads/Freunde-von-Freunden-Ronan-and-Erwan-Bouroullec-7688-1600x1200.jpg", alt: "alttext" %>
       </div>
     </div>
   </div>
+</div>
 
 
