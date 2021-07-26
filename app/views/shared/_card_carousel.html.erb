@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="section">
+    <h2>Browse by expertise</h2>
+    <div class="owl-carousel owl-theme">
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://i.pinimg.com/474x/cf/fd/dd/cffddd8897bb8498a7b81eb851aea379.jpg)">
+        <%= link_to "Cooking", consultations_path(speciality: "Cooking"), style: "color: white" %>
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://i.pinimg.com/564x/a5/50/0e/a5500e61531a449f31673f108515f2d6.jpg)">
+        <%= link_to "Film", consultations_path(speciality: "Film"), style: "color: white" %>
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://i.pinimg.com/564x/d2/82/49/d282494ed5cae1283bc1a1a162e6ad5b.jpg)">
+        <%= link_to "IT", consultations_path(speciality: "IT"), style: "color: white" %>
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://i.pinimg.com/564x/b6/94/e4/b694e4e6ab88c35b121a9d33d4b130f8.jpg)">
+        <%= link_to "Marketing", consultations_path(speciality: "Marketing"), style: "color: white" %>
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://i.pinimg.com/564x/2e/da/ba/2edaba537ac8923206026855e76aeee5.jpg)">
+        <%= link_to "UX Design", consultations_path(speciality: "UX Design"), style: "color: white" %>
+      </div>
+    </div>
+  </div>
+</div>

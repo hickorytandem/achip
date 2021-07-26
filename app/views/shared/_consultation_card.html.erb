@@ -1,0 +1,30 @@
+<div class="container section">
+  <div class="card-row">
+    <% @consultations.first(6).each do |consultation| %>
+      <div class="card-column">
+        <%= link_to consultation_path(consultation), action: 'go' do %>
+
+          <div class="card-product">
+            <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <div class="card-product-infos">
+              <%# Badge %>
+              <div class="consultation-badges d-flex">
+                <span class="badge badge-primary mb-3"><%= consultation.user.speciality %></span>
+                <%# Keep for Booking status %>
+                <%# <span class="badge badge-primary">Status</span> %>
+              </div>
+              <%# Title + Description %>
+              <div class="consultation-title">
+                <h2><%= consultation.title %></h2>
+                <p style="opacity: .7;"><%= consultation.user.name %></p>
+              </div>
+              <%# Price %>
+              <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> mins</strong></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
