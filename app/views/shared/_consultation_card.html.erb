@@ -3,7 +3,6 @@
     <% @consultations.first(6).each do |consultation| %>
       <div class="card-column">
         <%= link_to consultation_path(consultation), action: 'go' do %>
-
           <div class="card-product">
             <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
             <div class="card-product-infos">
@@ -24,7 +23,6 @@
           </div>
         <% end %>
       </div>
-
     <% end %>
   </div>
 </div>
