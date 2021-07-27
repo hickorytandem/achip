@@ -38,7 +38,7 @@
 
 </div>
 <div class="container d-flex flex-column align-items-center" style="width: 100vw;">
-   <% @bookings.first(3).each do |booking| %>
+   <% current_user.bookings_as_mentor.each do |booking| %>
    <%= link_to booking_path(booking), action: 'go' do %>
    <div class="card-booking col-lg-12">
       <%= image_tag booking.consultation.user.avatar, alt: "Consultant image" %>
