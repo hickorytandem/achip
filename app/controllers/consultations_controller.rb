@@ -14,6 +14,7 @@ class ConsultationsController < ApplicationController
 
   def new
     @consultation = Consultation.new
+    authorize @consultation
   end
 
   def show
