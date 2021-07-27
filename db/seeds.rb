@@ -16,7 +16,7 @@ puts "Creating users"
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
   specialty = ["IT", "Film", "Marketing", "Cooking", "UX Design"].sample
   status = ["Employeed", "Unemployeed", "Student", "Intern"].sample
-  file = URI.open("https://source.unsplash.com/1600x900/?#{specialty}")
+  file = URI.open("https://source.unsplash.com/1600x900/?{portrait}")
   user = User.new(
     name: Faker::Name.name,
     bio: Faker::Educator.university,

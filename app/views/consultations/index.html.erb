@@ -11,7 +11,8 @@
       <div class="card-column">
         <%= link_to consultation_path(consultation), action: 'go' do %>
           <div class="card-product">
-            <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <%= cl_image_tag consultation.user.avatar.key %>
+            <%# <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
             <div class="card-product-infos">
               <%# Badge %>
               <div class="consultation-badges d-flex">
