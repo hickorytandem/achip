@@ -12,6 +12,26 @@ puts "Destroying users"
 Consultation.destroy_all
 User.destroy_all
 puts "Creating users"
+mentor = User.new(
+  name: "mentor",
+  bio: Faker::Educator.university,
+  email: "mentor@email.com",
+  password: "password",
+  location: "Tokyo",
+  speciality: "ECON"
+  # status: status
+  )
+
+mentee = User.new(
+    name: "mentee",
+    bio: Faker::Educator.university,
+    email: "mentee@email.com",
+    password: "password",
+    location: "Tokyo",
+    speciality: "ECON"
+    # status: status
+  )
+
 10.times do
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
   specialty = ["IT", "Film", "Marketing", "Cooking", "UX Design"].sample
@@ -26,6 +46,7 @@ puts "Creating users"
     speciality: specialty,
     # status: status
     )
+  
   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
   user.save!
   title = ["Job search", "Interview tips", "Contract negotiation", "Surprise"].sample

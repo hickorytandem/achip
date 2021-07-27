@@ -7,7 +7,7 @@
 
 <div class="container">
    <div class="row">
-      <div class="col-4 d-flex justify-content-around ">
+      <div class="col-4 d-flex justify-content-around">
          <div class="card-dashboard mb-3" style="width: 27rem; border-radius: 5px;">
             <div class="card-dashboard-infos d-flex flex-column justify-content-between">
                <h2>My Sessions</h2>
@@ -36,16 +36,22 @@
 
 </div>
 <div class="container d-flex flex-column align-items-center" style="width: 100vw;">
-   <% @bookings.first(3).each do |booking| %>
+   <% current_user.bookings_as_mentor.each do |booking| %>
    <%= link_to booking_path(booking), action: 'go' do %>
    <div class="card-booking col-lg-12">
       <%= image_tag booking.consultation.user.avatar, alt: "Consultant image" %>
       <div class="card-booking-infos">
-         <div class="consultation-title">
+         <div class="mentor-name">
             <h2><%= booking.consultation.user.name %></h2>
             <p style="opacity: .7;"><%= booking.consultation.title %></p>
          </div>
-         <p class="consultation-price" style="font-size: 16px;"><%= booking.date_time %></p>
+         <div class="card-booking-description d-flex flex-row justify-content-between">
+            <p class="consultation-date" style="font-size: 16px;"><strong>Time: </strong><%= booking.date_time %></p>
+            <div>
+               <button type="button" class="btn btn-primary" id="decline">Decline</button>
+               <button type="button" class="btn btn-primary" id="accept">Accept</button>
+            </div>
+         </div>
       </div>
    </div>
    <% end %>
