@@ -10,6 +10,12 @@ class ConsultationsController < ApplicationController
         consultation.user.speciality == params["speciality"]
       end
     end
+
+    if params[:query].present?
+      @consultations = Consultation.search_by_title_and_description(params[:query])
+    else
+      @consultations = Consultation.all
+    end
   end
 
   def new

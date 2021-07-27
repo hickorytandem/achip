@@ -4,7 +4,17 @@
     <div class="text-center">
       <h1>Find a mentor to guide you for <br>the future ahead</h1>
       <p>Work with leading mentors and gain access to personalized guidance to reach your potential. Ongoing sessions and expert advice, on your terms, all for a flat price.</p>
-      <%= link_to "Explore mentors", consultations_path, class: "btn btn-primary" %>
+        <%= form_tag consultations_path, method: :get do %>
+        <div class="d-flex justify-content-center align-baseline">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a session",
+            id: "search-form"
+          %>
+          <%= submit_tag "Explore sessions", class: "btn btn-primary" %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
