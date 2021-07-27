@@ -2,8 +2,8 @@
   <%= simple_form_for(@consultation) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :duration %>
+    <%= f.input :price, label:"$" %>
+    <%= f.input :duration, label:"Hour" %>
     <%= f.submit class: "btn btn-success mt-3" %>
   <% end %>
 </div>
