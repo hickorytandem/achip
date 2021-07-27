@@ -1,23 +1,36 @@
 <div class="container">
-  <div class="navbar">
-    <h1 class="my-5">All Consultations💡</h1>
-    <button type="button" class="btn btn-primary">
-    <%= link_to "Add a new consultation", new_consultation_path %>
-    </button>
+  <div class="page-title">
+    <h1>All Sessions</h1>
+    <%= link_to "Add a new consultation", new_consultation_path, class: "btn btn-primary" %>
   </div>
-  <div class="row">
+</div>
+
+<div class="container section">
+  <div class="card-row">
     <% @consultations.each do |consultation| %>
-      <div class="cards col-6 col-lg-4">
-        <%= link_to consultation_path(consultation) do %>
-          <div class="card shadow p-3 mb-3">
-            <h3 class="mb-3"><%= consultation.title %></h3>
-            <p>💬<%= consultation.description %></p>
-            <p>💰<%= consultation.price %></p>
-            <p>⏰<%= consultation.duration %></p>
+      <div class="card-column">
+        <%= link_to consultation_path(consultation), action: 'go' do %>
+          <div class="card-product">
+            <%= cl_image_tag consultation.user.avatar.key %>
+            <%# <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <div class="card-product-infos">
+              <%# Badge %>
+              <div class="consultation-badges d-flex">
+                <span class="badge badge-primary mb-3"><%= consultation.user.speciality %></span>
+                <%# Keep for Booking status %>
+                <%# <span class="badge badge-primary">Status</span> %>
+              </div>
+              <%# Title + Description %>
+              <div class="consultation-title">
+                <h2><%= consultation.title %></h2>
+                <p style="opacity: .7;"><%= consultation.user.name %></p>
+              </div>
+              <%# Price %>
+              <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> mins</strong></p>
+            </div>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
-

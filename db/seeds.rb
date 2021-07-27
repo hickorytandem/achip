@@ -34,9 +34,9 @@ mentee = User.new(
 
 10.times do
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
-  specialty = ["IT", "Media", "Sales", "Editing", "UX Design"].sample
+  specialty = ["IT", "Film", "Marketing", "Cooking", "UX Design"].sample
   status = ["Employeed", "Unemployeed", "Student", "Intern"].sample
-  file = URI.open("https://source.unsplash.com/1600x900/?#{specialty}")
+  file = URI.open("https://source.unsplash.com/1600x900/?{portrait}")
   user = User.new(
     name: Faker::Name.name,
     bio: Faker::Educator.university,
@@ -56,7 +56,7 @@ mentee = User.new(
       value when negotiating compensation. I’ll provide expert advice on ways for demonstrating your worth
       and successfully negotiating for pay increases based on your achievements.", "I’ll go over the 5 do’s
         and don’ts of interviewing and guide you on how to best answer interview questions giving the the
-        confidence to stand out.", "Get the inside track on how to convert an office friendship into and office
+        confidence to stand out.", "Get the inside track on how to convert an office friendship into an office
         romance!", "If you are stuck in a job you hate, I can definitely help you ditch your company and find,
         and employer who will respect and value your service and achievements. Tell your boss that he/she can
         take his/her job and shove it! You are valuable and you matter!"].sample

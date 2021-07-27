@@ -11,16 +11,23 @@
 .card-product-big {
   overflow: hidden;
   height: 320px;
-  background: $dark-gray;
+  background: $black;
   color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 12px;
+  min-width: 600px;
+  img {
+    width: 65%;
+    height: 100%;
+    object-fit: cover;
+  }
+  border: 1px solid $black
 }
 
 .card-product-big h2 {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
   margin: 0;
   padding: 0 24px 8px 24px;
 }
@@ -28,7 +35,6 @@
 .card-product-big p {
   font-size: 16px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   // margin-top: 8px;
   padding: 8px 24px 24px 24px;
@@ -46,33 +52,13 @@ a {
   }
 }
 
-.owl-carousel {
-  display: flex;
-  .owl-nav .owl-prev {
-    position: absolute;
-    top: 40%;
-    left: -12px;
-    height: 48px;
-    width: 48px;
-    background: white !important;
-    border: 1px solid black !important;
-    font-size: 30px !important;
-  }
-  .owl-next {
-    position: absolute;
-    width: 48px;
-    top: 40%;
-    right:-20px;
-    background: white !important;
-    border: 1px solid black !important;
-    font-size: 30px !important;
-  }
-}
-.owl-item.active:hover {
-    cursor: grab;
-}
-
 .mentor-logo {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
+
+.trending {
+  height: 48px;
+  align-items: center;
+}
+

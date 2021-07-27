@@ -3,11 +3,18 @@ class ConsultationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @consultations = policy_scope(Consultation.all)
+    if params["speciality"].nil?
+      @consultations = policy_scope(Consultation.all)
+    else
+      @consultations = policy_scope(Consultation.all).select do |consultation|
+        consultation.user.speciality == params["speciality"]
+      end
+    end
   end
 
   def new
     @consultation = Consultation.new
+    authorize @consultation
   end
 
   def show
