@@ -12,4 +12,13 @@ class ConsultationPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def edit?
+    true
+  end
+
+  def update?
+    edit?
+  end
+
 end

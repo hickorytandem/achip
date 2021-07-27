@@ -1,5 +1,5 @@
 class ConsultationsController < ApplicationController
-  before_action :find_consultation, only: [:show]
+  before_action :find_consultation, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -20,6 +20,19 @@ class ConsultationsController < ApplicationController
   def show
     authorize @consultation
     @booking = Booking.new
+  end
+
+  def edit
+    authorize @consultation
+  end
+
+  def update
+    if @consultation.update(consultation_params)
+      redirect_to @consultation, notice: 'Consultation was successfully updated'
+    else
+      render :edit
+    end
+
   end
 
   def create
