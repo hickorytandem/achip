@@ -4,10 +4,12 @@
     <div class="col-5">
       <div class="card profile p-3">
         <% if @consultation.user.avatar.attached? %>
-          <%= image_tag @consultation.user.avatar, alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
+          <%= cl_image_tag @consultation.user.avatar.key, class: "avatar-xl border border-primary m-3" %>
+<!--           <%= image_tag @consultation.user.avatar, alt: "Profile image", class: "avatar-xl border border-primary m-3" %> -->
         <% else %>
-        <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
+          <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
         <% end %>
+        
         <div class="card-body">
           <p class="card-title mt-3" style="font-size: 24px;"><strong><%= @consultation.user.name %></strong></p>
           <p class="card-subtitle mb-3 text-muted"><%= @consultation.user.speciality %></p>
