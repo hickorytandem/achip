@@ -1,6 +1,23 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+  margin: 0 auto;
   z-index: 1000;
+  border-radius: 8px;
+  color: $black;
+  border: 1px solid $black;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.alert-success {
+  background-color: #c9f15a;
+  width: 25%;
+}
+
+.alert-danger {
+  background-color:$orange;
+  width: 32%;
+
 }
