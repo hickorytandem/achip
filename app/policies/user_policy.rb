@@ -5,11 +5,16 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    user
+  end
+
   def edit?
     user
   end
 
-  def show?
+  def update?
     user
   end
+
 end
