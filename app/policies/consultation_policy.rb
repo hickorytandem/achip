@@ -21,4 +21,8 @@ class ConsultationPolicy < ApplicationPolicy
     edit?
   end
 
+  def destroy?
+    true
+  end
+
 end
