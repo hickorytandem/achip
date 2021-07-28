@@ -1,5 +1,11 @@
 <h1>My Profile</h1>
-<%= cl_image_tag @user.avatar.key, class: "avatar-xl border border-primary m-3" %>
+
+<% if @user.avatar.attached? %>
+  <%= cl_image_tag @consultation.user.avatar.key, class: "avatar-xl border border-primary m-3" %>
+<% else %>
+  <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
+<% end %>
+
 <h2 class="mb-5"><%= @user.name %></h2>
 <p class="mb-5">Email : <%= @user.email %></p>
 <p class="mb-5">Bio : <%= @user.bio %></p>
