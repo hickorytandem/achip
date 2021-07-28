@@ -11,13 +11,7 @@
       <div class="card-column">
         <%= link_to consultation_path(consultation), action: 'go' do %>
           <div class="card-product">
-            <% if consultation.user.avatar.attached? %>
-              <%= cl_image_tag consultation.user.avatar.key %>
-            <% else %>
-              <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
-            <% end %>
-
-            <%# <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <%= avatar_for(consultation.user, "card-product-image") %>
             <div class="card-product-infos">
               <%# Badge %>
               <div class="consultation-badges d-flex">

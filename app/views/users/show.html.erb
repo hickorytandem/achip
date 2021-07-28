@@ -1,15 +1,6 @@
 <h1>My Profile</h1>
-<%
-=begin %>
-<% if @user.avatar.attached? %>
-  <%= cl_image_tag @user.avatar.key, class: "avatar-xl border border-primary m-3" %>
-<% else %>
-  <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
-<% end %>
-<%
-=end %>
 
-<span class="avatar-xl"><%= avatar_for(current_user, 100, 100) %></span>
+<%= avatar_for(current_user, "avatar-xl border border-primary m-3") %>
 
 <h2 class="mb-5"><%= @user.name %></h2>
 <p class="mb-5">Email : <%= @user.email %></p>
