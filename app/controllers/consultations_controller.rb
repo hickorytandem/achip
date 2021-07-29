@@ -1,5 +1,5 @@
 class ConsultationsController < ApplicationController
-  before_action :find_consultation, only: [:show, :edit, :update]
+  before_action :find_consultation, only: [:show, :edit, :update, :delete]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -50,6 +50,13 @@ class ConsultationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @consultation = Consultation.find(params[:id])
+    authorize @consultation
+    @consultation.destroy
+    redirect_to consultations_path
   end
 
   private
