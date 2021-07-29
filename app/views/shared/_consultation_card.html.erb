@@ -4,8 +4,7 @@
       <div class="card-column">
         <%= link_to consultation_path(consultation), action: 'go' do %>
           <div class="card-product">
-            <%# <%= cl_image_tag consultation.user.avatar.key %> %>
-            <%# <%= image_tag 'https://source.unsplash.com/random', alt: "Consultant image" %>
+            <%= avatar_for(consultation.user, "card-product-image") %>
             <div class="card-product-infos">
               <%# Badge %>
               <div class="consultation-badges d-flex">
