@@ -53,9 +53,10 @@ class ConsultationsController < ApplicationController
   end
 
   def destroy
-    authorize @consultation
     @consultation = Consultation.find(params[:id])
+    authorize @consultation
     @consultation.destroy
+    redirect_to consultations_path
   end
 
   private

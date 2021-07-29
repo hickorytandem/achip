@@ -5,7 +5,6 @@
       <div class="card profile p-3">
         <% if @consultation.user.avatar.attached? %>
           <%= cl_image_tag @consultation.user.avatar.key, class: "avatar-xl border border-primary m-3" %>
-<!--           <%= image_tag @consultation.user.avatar, alt: "Profile image", class: "avatar-xl border border-primary m-3" %> -->
         <% else %>
           <%= image_tag "images.jpg", alt: "Profile image", class: "avatar-xl border border-primary m-3" %>
         <% end %>
