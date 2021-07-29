@@ -25,6 +25,20 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to dashboard_path
+    else
+      render :home
+    end
+  end
+
   private
 
   def booking_params

@@ -12,25 +12,6 @@ puts "Destroying users"
 Consultation.destroy_all
 User.destroy_all
 puts "Creating users"
-mentor = User.new(
-  name: "mentor",
-  bio: Faker::Educator.university,
-  email: "mentor@email.com",
-  password: "password",
-  location: "Tokyo",
-  speciality: "ECON"
-  # status: status
-  )
-
-mentee = User.new(
-    name: "mentee",
-    bio: Faker::Educator.university,
-    email: "mentee@email.com",
-    password: "password",
-    location: "Tokyo",
-    speciality: "ECON"
-    # status: status
-  )
 
 10.times do
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
