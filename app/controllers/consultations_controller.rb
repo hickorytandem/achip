@@ -57,6 +57,8 @@ class ConsultationsController < ApplicationController
     authorize @consultation
     @consultation.destroy
     redirect_to consultations_path
+  rescue Pundit::NotAuthorizedError
+    redirect_to consultation_path(@consultation)
   end
 
   private

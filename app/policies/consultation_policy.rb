@@ -14,7 +14,7 @@ class ConsultationPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    record.user == user
   end
 
   def update?
@@ -22,7 +22,7 @@ class ConsultationPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    record.user == user
   end
 
 end
