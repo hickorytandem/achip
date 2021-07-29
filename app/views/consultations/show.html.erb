@@ -44,4 +44,6 @@
     </div>
   </div>
 </div>
-<%= link_to "Edit", edit_consultation_path %>
+<%= link_to "Edit", edit_consultation_path, class: "btn btn-primary" %>
+<%= link_to "Delete", consultation_path(@consultation), class: "btn btn-primary", method:  :delete, data: { confirm: "Are you sure?"} %>
+

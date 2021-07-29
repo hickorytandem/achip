@@ -11,3 +11,12 @@
 button > a {
   color: white;
 }
+
+.log-in {
+  padding: 8px 16px !important;
+  font-weight: 500;
+  &:hover {
+    color: white !important;
+  }
+}
+
