@@ -16,10 +16,11 @@
         <%= f.input :bio, as: :text %>
         <%= f.input :location %>
         <%= f.input :speciality, as: :collection_select, collection: ["IT", "Film", "Marketing", "Cooking", "UX Design"] %>
-        <%= f.button :submit, "Save", class: "btn btn-primary mt-3" %>
-        <%= link_to "Cancel", user_path(current_user), class: "btn btn-primary" %>
+        <div class="edit-cta">
+          <%= link_to "Cancel", user_path(current_user), class: "btn btn-outline-primary mr-3" %>
+          <%= f.button :submit, "Save", class: "btn btn-primary" %>
+        </div>
       <% end %>
-
     </div>
   </div>
 </div>
