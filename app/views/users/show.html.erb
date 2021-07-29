@@ -1,6 +1,6 @@
 <h1>My Profile</h1>
 
-<%= avatar_for(current_user, "avatar-xl border border-primary m-3") %>
+<%= avatar_for(@user, "avatar-xl border border-primary m-3") %>
 
 <h2 class="mb-5"><%= @user.name %></h2>
 <p class="mb-5">Email : <%= @user.email %></p>

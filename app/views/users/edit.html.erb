@@ -1,14 +1,21 @@
-<h1>Edit profile</h1>
-<%= avatar_for(current_user, "avatar-xl border border-primary m-3") %>
-<%# Form %>
-<div class="container m-3">
-  <%= simple_form_for(@user) do |f| %>
-    <%= f.input :avatar, as: :file %>
-    <%= f.input :name %>
-    <%= f.input :email, disabled: true %>
-    <%= f.input :bio, as: :text %>
-    <%= f.input :location %>
-    <%= f.input :speciality, as: :collection_select, collection: ["IT", "Film", "Marketing", "Cooking", "UX Design"] %>
-    <%= f.button :submit, "Save", class: "btn btn-primary mt-3" %>
-  <% end %>
+<div class="container">
+  <div class="page-title">
+    <h1>Edit Profile</h1>
+  </div>
+</div>
+
+<div class="container">
+  <%= avatar_for(current_user, "avatar-xl border border-primary m-3") %>
+  <%# Form %>
+  <div class="container m-3">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :avatar, as: :file %>
+      <%= f.input :name %>
+      <%= f.input :email, disabled: true %>
+      <%= f.input :bio, as: :text %>
+      <%= f.input :location %>
+      <%= f.input :speciality, as: :collection_select, collection: ["IT", "Film", "Marketing", "Cooking", "UX Design"] %>
+      <%= f.button :submit, "Save", class: "btn btn-primary mt-3" %>
+    <% end %>
+  </div>
 </div>
