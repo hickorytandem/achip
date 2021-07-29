@@ -17,10 +17,17 @@ puts "Creating users"
   location = ["Yokohama", "Tokyo", "Osaka", "Kyoto", "Nagoya", "Fukuoka"].sample
   specialty = ["IT", "Film", "Marketing", "Cooking", "UX Design"].sample
   status = ["Employeed", "Unemployeed", "Student", "Intern"].sample
+  bio = ["I’m a professional bodybuilder with incredible confidence and experience as a product developer.",
+    "I founded several startup that became successful companies including facebook and Napster.",
+    "I played Nicolas Cage’s stunt double and learned the ins and outs of media and movies. I have since started my own production company.",
+    "I graduated with a PHD in sports journalism and am was a member of the Olympic gold medal handball team.",
+    "My father was a military general and I graduated top of my class at the Brookston Military Academy in the Republic of Antarctica.",
+    "I am not a successful professional, but I have a great sense of humor and have been married for 8 years!"].sample
+
   file = URI.open("https://source.unsplash.com/1600x900/?{portrait}")
   user = User.new(
     name: Faker::Name.name,
-    bio: Faker::Educator.university,
+    bio: bio,
     email: Faker::Internet.email,
     password: "password",
     location: location,
