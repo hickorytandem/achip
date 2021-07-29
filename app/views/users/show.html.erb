@@ -1,0 +1,12 @@
+<h1>My Profile</h1>
+
+<%= avatar_for(@user, "avatar-xl border border-primary m-3") %>
+
+<h2 class="mb-5"><%= @user.name %></h2>
+<p class="mb-5">Email : <%= @user.email %></p>
+<p class="mb-5">Bio : <%= @user.bio %></p>
+<p class="mb-5">Location : <%= @user.location %></p>
+<p class="mb-5">Speciality : <%= @user.speciality %></p>
+
+
+<%= link_to 'Edit profile', edit_user_path(@user), class: "btn btn-primary" %>
