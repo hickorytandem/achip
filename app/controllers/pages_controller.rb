@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @expertises = ["IT", "Film", "Marketing", "Cooking", "UX Design"]
+    @expertises = ["IT", "Media", "Sales", "Editing", "UX Design"]
     @consultations = policy_scope(Consultation.all)
     @top_consultations = @consultations.sample(6)
   end
@@ -11,4 +11,5 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = Booking.all
   end
+
 end
