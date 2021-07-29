@@ -8,13 +8,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    authorize @user
   end
 
   def edit
+    authorize @user
   end
 
   def update
     @user.update(user_params)
+    authorize @user
     redirect_to user_path(@user)
   end
 
