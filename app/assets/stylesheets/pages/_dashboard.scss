@@ -1,0 +1,18 @@
+.center {
+  display: flex-row;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card-left {
+position: absolute;
+right: 24px;
+}
+
+.accept {
+  margin-right: 16px;
+}
+
+.dashboard-card {
+  width: 70vw;
+}
