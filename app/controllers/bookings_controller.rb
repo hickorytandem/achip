@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def create
+ def create
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.user = current_user
@@ -21,7 +21,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      render :new
+      redirect_to consultation_path(@consultation)
+      flash[:error] = "Booking error, please enter a valid date."
     end
   end
 
