@@ -22,6 +22,12 @@
   margin-right: 12px;
 }
 
+li.nav-item {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: $black;
   &:hover {
