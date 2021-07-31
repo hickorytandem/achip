@@ -41,7 +41,7 @@
           <div class="card-text mt-5">
             <p style="font-size: 16px;"><strong>Choose session time</strong></p>
             <%= simple_form_for [ @consultation, @booking ] do |f| %>
-              <%= f.input :date_time, as: :date, html5: true, label: false %>
+              <%= f.input :date_time, as: :date, html5: true, label: false, required: true %>
               <%= f.submit "Booking session", class: "btn btn-primary float-right" %>
             <% end %>
           </div>
