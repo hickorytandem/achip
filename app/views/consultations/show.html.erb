@@ -33,10 +33,10 @@
           <br>
           <p class="mb-2"><%= @consultation.description %></p>
           <% if @consultation.user == @current_user %>
-          <div class="card-text mt-5 d-flex justify-content-end">
-            <%= link_to "Edit", edit_consultation_path, class: "btn btn-primary mr-2" %>
-            <%= link_to "Delete", consultation_path(@consultation), class: "btn btn-primary", method:  :delete, data: { confirm: "Are you sure?"} %>
-          </div>
+            <div class="card-text mt-5 d-flex justify-content-end">
+              <%= link_to "Delete", consultation_path(@consultation), class: "btn btn-outline-primary mr-3", method:  :delete, data: { confirm: "Are you sure?"} %>
+              <%= link_to "Edit", edit_consultation_path, class: "btn btn-primary" %>
+            </div>
           <% else %>
           <div class="card-text mt-5">
             <p style="font-size: 16px;"><strong>Choose session time</strong></p>
