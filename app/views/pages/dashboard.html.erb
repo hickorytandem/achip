@@ -112,11 +112,11 @@
                 <div class="consultation-badges d-flex">
                     <span class="badge badge-primary mb-3"><%= booking.consultation.user.speciality %></span>
                     <% if booking.status == "pending" %>
-                        <span class="badge badge-warning mb-3 ml-2"><%= booking.status %></span>
+                        <span class="badge badge-warning mb-3 ml-2"><%= booking.status.capitalize %></span>
                       <% elsif booking.status == "accepted" %>
-                        <span class="badge badge-primary mb-3 ml-2"><%= booking.status %></span>
+                        <span class="badge badge-primary mb-3 ml-2"><%= booking.status.capitalize %></span>
                       <% elsif booking.status == "declined" %>
-                        <span class="badge badge-danger mb-3 ml-2"><%= booking.status %></span>
+                        <span class="badge badge-danger mb-3 ml-2"><%= booking.status.capitalize %></span>
                     <% end %>
                     <%# Keep for Booking status %>
                     <%# <span class="badge badge-primary">Status</span> %>
