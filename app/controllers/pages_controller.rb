@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = Booking.all
+    @consultations = Consultation.all
   end
 
 end

@@ -4,79 +4,136 @@
     <%= link_to "Create mentor session", new_consultation_path, class: "btn btn-primary" %>
   </div>
 </div>
-
 <div class="container">
    <div class="row">
       <div class="col-4 d-flex justify-content-around">
-        <a id="home-tab" data-toggle="tab" href="#my-session" role="tab" aria-controls="home" aria-selected="true" class="dashboard-card">
+        <a id="home-tab" data-toggle="tab" href="#my-session" role="tab" aria-controls="my-session" aria-selected="true" class="dashboard-card">
          <div class="card-dashboard mb-3" style="width: 27rem; border-radius: 5px;">
             <div class="card-dashboard-infos d-flex flex-column justify-content-between">
                <h2>My Sessions</h2>
-               <p>0</p>
+               <p><%= current_user.consultations.count %></p>
             </div>
          </div>
-         </a>
+        </a>
       </div>
-
       <div class="col-4 d-flex justify-content-around">
-        <a id="home-tab" data-toggle="tab" href="#booking-request" role="tab" aria-controls="home" aria-selected="true">
+        <a id="home-tab" data-toggle="tab" href="#booking-request" role="tab" aria-controls="booking-request" aria-selected="true">
          <div class="card-dashboard mb-3" style="width: 27rem; border-radius: 5px;">
             <div class="card-dashboard-infos d-flex flex-column justify-content-between">
                <h2>Booking request</h2>
-               <p>3</p>
+               <p><%= current_user.bookings_as_mentor.count %></p>
             </div>
          </div>
-       </a>
+        </a>
       </div>
       <div class="col-4 d-flex justify-content-around ">
-        <a id="home-tab" data-toggle="tab" href="#my-session" role="tab" aria-controls="home" aria-selected="true">
+        <a id="home-tab" data-toggle="tab" href="#my-booking" role="tab" aria-controls="my-booking" aria-selected="true">
          <div class="card-dashboard mb-3" style="width: 27rem; border-radius: 5px;">
             <div class="card-dashboard-infos d-flex flex-column justify-content-between">
                <h2>My bookings</h2>
-               <p>12</p>
+               <p><%= current_user.bookings_as_mentee.count %></p>
             </div>
          </div>
+        </a>
       </div>
-    </a>
-   </div>
-
-</div>
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="my-session" role="tabpanel" aria-labelledby="home-tab">YESSSSSS!!!</div>
-  <div class="tab-pane fade" id="booking-request" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="container d-flex flex-column align-items-center" style="width: 100vw;">
-     <% current_user.bookings_as_mentor.each do |booking| %>
-     <div class="card-booking col-lg-12">
-        <div class="card-booking-infos">
-           <div class="mentor-name">
-              <h2><%= booking.consultation.user.name %></h2>
-              <p style="opacity: .7;"><%= booking.consultation.title %></p>
-           </div>
-           <div class="card-booking-description d-flex flex-row justify-content-between">
-              <p class="consultation-date" style="font-size: 16px;"><strong>Time: </strong><%= booking.date_time %></p>
-              <div>
-                 <% if booking.pending? %>
-                    <%= simple_form_for booking, method: :patch, url: booking_path(booking) do |f| %>
-                       <%= f.input :status, as: :hidden, input_html: { value: 'accept'} %>
-                       <%= f.submit 'Accept', class: 'btn btn-info' %>
-
-                    <% end %>
-                    <%= simple_form_for booking do |f| %>
-                       <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
-                       <%= f.submit 'Decline', class: 'btn btn-info' %>
-                    <% end %>
-                 <% else %>
-                    <p class='booking-tag'><%= booking.status %></p>
-                 <% end %>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="my-session" role="tabpanel" aria-labelledby="my-session-tab">
+        <div class="container section">
+          <% current_user.consultations.each do |consultation| %>
+          <%= link_to consultation_path(consultation), action: 'go' do %>
+            <div class="card-product flex-grow-1 dashboard-card">
+              <%= avatar_for(consultation.user, "card-product-image") %>
+              <div class="card-product-infos">
+                <div class="consultation-badges d-flex">
+                    <span class="badge badge-primary mb-3"><%= consultation.user.speciality %></span>
+                </div>
+                <div class="consultation-title">
+                  <h2><%= consultation.title %></h2>
+                  <p style="opacity: .7;"><%= consultation.user.name %></p>
+                </div>
+                <p class="consultation-price" style="font-size: 16px;"><strong><%= consultation.price %>€ / <%= consultation.duration %> mins</strong></p>
               </div>
-           </div>
+            </div>
+          <% end %>
+          <% end %>
         </div>
-     </div>
-     <% end %>
+      </div>
+      <div class="tab-pane fade" id="booking-request" role="tabpanel" aria-labelledby="booking-request-tab">
+        <div class="container section">
+            <% current_user.bookings_as_mentor.each do |booking| %>
+            <% if booking.pending? %>
+              <div class="card-product flex-grow-1 dashboard-card">
+                <%= avatar_for(booking.consultation.user, "card-product-image") %>
+                <div class="card-product-infos">
+                  <div class="consultation-badges d-flex">
+                      <span class="badge badge-primary mb-3"><%= booking.consultation.user.speciality %></span>
+                      <%# Keep for Booking status %>
+                      <%# <span class="badge badge-primary">Status</span> %>
+                    </div>
+                    <%# Title + Description %>
+                    <div class="consultation-title">
+                      <%= link_to consultation_path(booking.consultation), action: 'go' do %>
+                      <h2><%= booking.consultation.title %></h2>
+                      <p style="opacity: .7;"><%= booking.consultation.user.name %></p>
+                      <% end %>
+                    </div>
+                    <%# Price %>
+                    <p class="consultation-price" style="font-size: 16px;"><strong><%= booking.consultation.price %>€ / <%= booking.consultation.duration %> mins</strong></p>
+                  </div>
+                  <div class="card-left-parent">
+                    <div class="card-left d-flex">
+                      <%= simple_form_for booking, method: :patch, url: booking_path(booking) do |f| %>
+                         <%= f.input :status, as: :hidden, input_html: { value: 'accept'} %>
+                         <%= f.submit 'Accept', class: 'btn btn-outline-primary accept' %>
+                      <% end %>
+                      <%= simple_form_for booking do |f| %>
+                         <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
+                         <%= f.submit 'Decline', class: 'btn btn-primary' %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <p>There is no pending requests.</p>
+            <% end %>
+            <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="my-booking" role="tabpanel" aria-labelledby="my-booking-tab">
+        <div class="container section">
+          <% current_user.bookings_as_mentee.where.not(status: "decline").each do |booking| %>
+          <%= link_to consultation_path(booking.consultation), action: 'go' do %>
+            <div class="card-product flex-grow-1 dashboard-card">
+              <%= avatar_for(booking.consultation.user, "card-product-image") %>
+              <div class="card-product-infos">
+                <div class="consultation-badges d-flex">
+                    <span class="badge badge-primary mb-3"><%= booking.consultation.user.speciality %></span>
+                    <% if booking.status == "pending" %>
+                        <span class="badge badge-warning mb-3 ml-2"><%= booking.status %></span>
+                      <% elsif booking.status == "accepted" %>
+                        <span class="badge badge-primary mb-3 ml-2"><%= booking.status %></span>
+                      <% elsif booking.status == "declined" %>
+                        <span class="badge badge-danger mb-3 ml-2"><%= booking.status %></span>
+                    <% end %>
+                    <%# Keep for Booking status %>
+                    <%# <span class="badge badge-primary">Status</span> %>
+                </div>
+                  <%# Title + Description %>
+                <div class="consultation-title">
+                  <h2><%= booking.consultation.title %></h2>
+                  <p style="opacity: .7;"><%= booking.consultation.user.name %></p>
+                </div>
+                  <%# Price %>
+                <p class="consultation-price" style="font-size: 16px;"><strong><%= booking.consultation.price %>€ / <%= booking.consultation.duration %> mins</strong></p>
+              </div>
+            </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
-
-  </div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-</div>
-

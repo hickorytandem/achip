@@ -14,7 +14,7 @@ class ConsultationsController < ApplicationController
     if params[:query].present?
       @consultations = Consultation.search_by_title_and_description(params[:query])
     else
-      @consultations = Consultation.all
+      @consultations = policy_scope(Consultation.all)
     end
   end
 
