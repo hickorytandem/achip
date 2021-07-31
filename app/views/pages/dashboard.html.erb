@@ -26,7 +26,7 @@
          <div class="card-dashboard mb-3" style="border-radius: 5px;">
             <div class="card-dashboard-infos d-flex flex-column justify-content-between">
                <h2>Booking request</h2>
-               <p><%= current_user.bookings_as_mentor.count %></p>
+               <p><%= current_user.bookings_as_mentor.where(status: "pending").count %></p>
             </div>
          </div>
         </a>
@@ -72,7 +72,7 @@
 
           <%# Booking Request %>
           <div class="tab-pane fade" id="booking-request" role="tabpanel" aria-labelledby="booking-request-tab">
-            <% current_user.bookings_as_mentor.where(status: "pending") do |booking| %>
+            <% current_user.bookings_as_mentor.where(status: "pending").each do |booking| %>
               <%# <% if booking.pending? %>
                 <div class="card-product flex-grow-1 dashboard-card">
                   <%= avatar_for(booking.consultation.user, "card-product-image") %>
@@ -85,8 +85,8 @@
                       <%# Title + Description %>
                       <div class="consultation-title">
                         <%= link_to consultation_path(booking.consultation), action: 'go' do %>
-                        <h2><%= booking.consultation.title %></h2>
-                        <p style="opacity: .7;"><%= booking.consultation.user.name %></p>
+                          <h2><%= booking.consultation.title %></h2>
+                          <p style="opacity: .7;"><%= booking.consultation.user.name %></p>
                         <% end %>
                       </div>
                       <%# Price %>
@@ -107,8 +107,8 @@
                   </div>
                 </div>
               <%# <% else %>
-                <%# <p>There is no pending requests.</p>
-              <% end %>
+                <%# <p>There is no pending requests.</p> %>
+              <%# <% end %>
             <% end %>
           </div>
 
