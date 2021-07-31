@@ -34,6 +34,11 @@ import 'owl.carousel';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  $('#myTab a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+
   $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
