@@ -1,9 +1,23 @@
-<div class="container m-3">
-  <%= simple_form_for(@consultation) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price, label:"$" %>
-    <%= f.input :duration, label:"Hour" %>
-    <%= f.submit class: "btn btn-success mt-3" %>
-  <% end %>
+
+<div class="container">
+  <div class="page-title">
+    <h1>Create mentor session</h1>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="card booking-session col-7" style="padding: 42px 24px;">
+    <div class="container">
+      <%= simple_form_for(@consultation) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :price, label:"$Pricing" %>
+        <%= f.input :duration, label:"Minutes" %>
+        <div class="edit-cta">
+          <%= link_to "Cancel", dashboard_path, class: "btn btn-outline-primary mr-3" %>
+          <%= f.button :submit, "Create session", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
