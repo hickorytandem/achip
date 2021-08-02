@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Achip</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>Achip</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <%= stylesheet_pack_tag 'application' %>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-      <%= render 'shared/navbar' %>
-    <%# Alerts %>
-    <div class="col-xs-10 col-xs-offset-1">
-      <% flash.each do |type, msg| %>
-        <% if type == "notice" %>
-          <div class="alert alert-success">
-        <% elsif type == "alert" %>
-          <div class="alert alert-danger">
-        <% else %>
-          <div class='alert alert-<%= "#{type}" %>'>
-        <% end %>
-        <a href="#" class="close" data-dismiss="alert">&#215;</a>
-        <ul>
-          <li>
-            <%= msg %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-<%
-=begin %>
-     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%
-=end %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-  </body>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  <%= stylesheet_pack_tag 'application' %>
+</head>
+
+<body>
+  <% unless controller_name == "consultations" && ( action_name == "new" || action_name == "create" ) %>
+  <%= render 'shared/navbar' %>
+  <% end %>
+  <%# Alerts %>
+  <div class="col-xs-10 col-xs-offset-1">
+    <% flash.each do |type, msg| %>
+    <% if type == "notice" %>
+    <div class="alert alert-success"></div>
+    <% elsif type == "alert" %>
+    <div class="alert alert-danger"></div>
+    <% else %>
+    <div class='alert alert-<%= "#{type}" %>'></div>
+    <% end %>
+    <a href="#" class="close" data-dismiss="alert">&#215;</a>
+    <ul>
+      <li>
+        <%= msg %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+  <%= yield %>
+  <% unless controller_name == "consultations" && ( action_name == "new" || action_name == "create" )  %>
+  <%= render 'shared/footer' %>
+  <% end %>
+</body>
+
 </html>
